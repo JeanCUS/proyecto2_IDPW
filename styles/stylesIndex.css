@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #333; /* Cambia este color según tus preferencias */
+    color: #fff; /* Color del texto */
+    padding: 10px 0; /* Espaciado interior del encabezado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10em;
+}
+
+/* Estilos para el logotipo */
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+}
+.logo .urvar{
+    padding: 0em 0.5em;
+    font-size: large;
+}
+
+.logo img {
+    max-width: 50px;
+    max-height: 50px; /* Ajusta el tamaño máximo de tu logotipo */
+}
+
+
+/* Estilos para el menú */
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px; /* Espacio entre elementos del menú */
+}
+
+.menu a {
+    color: #fff; /* Color del texto del menú */
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+}
+
+.menu a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor sobre los enlaces */
+}
+
+.body{
+    min-height: 90vh;
+}
+
+
+/* Estilos para el carrusel */
+.carousel-container {
+    position: relative;
+    width: 80%; /* Ancho del carrusel */
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    display: flex;
+    gap: 10px; /* Espacio entre objetos */
+    transition: transform 0.5s ease; /* Transición suave para el carrusel */
+    will-change: transform;
+    width: 100%; /* Para que el carrusel ocupe todo el espacio */
+    overflow: hidden;
+}
+.carousel img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.carousel img.active {
+    transform: scale(1.1); /* Efecto de escala para la imagen activa */
+}
+
+/* Estilos para los botones de navegación */
+.prev-button, .next-button {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color 0.3s ease; /* Transición suave para los botones */
+}
+.prev-button {
+    left: 0;
+}
+.next-button {
+    right: 0;
+}
+
+/* Cambio de color al pasar el mouse por encima de los botones */
+.prev-button:hover, .next-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+footer {
+    background-color: #333; /* Cambia este color según tus preferencias */
+    color: #fff; /* Color del texto */
+    padding: 10px 0; /* Espaciado interior del footer */
+    text-align: center;
+    bottom: 0;
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Estilos para el texto de copyright */
+.copyright {
+    font-size: 14px; /* Tamaño de fuente para el copyright */
+}
+
+/* Estilos para los detalles de contacto */
+.contacto {
+    font-size: 12px; /* Tamaño de fuente para los detalles de contacto */
+}
