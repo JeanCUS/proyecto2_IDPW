@@ -63,8 +63,8 @@ header {
 /* Estilos para el carrusel */
 .carousel-container {
     position: relative;
-    width: 80%; /* Ancho del carrusel */
-    margin: 0 auto;
+    max-width: 70%; /* Ancho del carrusel */
+    margin: 2em auto;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -73,21 +73,28 @@ header {
 
 .carousel {
     display: flex;
-    gap: 10px; /* Espacio entre objetos */
+    gap: 3em; /* Espacio entre objetos */
     transition: transform 0.5s ease; /* Transición suave para el carrusel */
     will-change: transform;
-    width: 100%; /* Para que el carrusel ocupe todo el espacio */
+    width: 80%; /* Para que el carrusel ocupe todo el espacio */
     overflow: hidden;
+    align-items: center;
+    justify-content: center;
 }
+
 .carousel img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    max-width: 20em;
+    max-height: 20em;
+    /* object-fit: contain; */
     cursor: pointer;
     transition: transform 0.2s ease;
 }
-.carousel img.active {
-    transform: scale(1.1); /* Efecto de escala para la imagen activa */
+.carousel img:hover{
+    transform: scale(1.05);
+}
+
+.carousel img:active {
+    transform: scale(0.9); /* Efecto de escala para la imagen activa */
 }
 
 /* Estilos para los botones de navegación */
@@ -95,7 +102,7 @@ header {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
-    padding: 10px 20px;
+    padding: 10em 20px;
     border: none;
     cursor: pointer;
     z-index: 1;
