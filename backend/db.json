@@ -3,6 +3,7 @@
         "id": 1,
         "name": "Producto 1",
         "description": "Descripción del producto 1",
+        "offer": 0.10,
         "price": 19.99,
         "image": "img/ordenador-personal.png"
     },
@@ -10,6 +11,7 @@
         "id": 2,
         "name": "Producto 2",
         "description": "Descripción del producto 2",
+        "offer": 0.10,
         "price": 24.99,
         "image": "img/URVAR-L.png"
     },
@@ -17,6 +19,7 @@
         "id": 3,
         "name": "Producto 3",
         "description": "Descripción del producto 3",
+        "offer": 0.10,
         "price": 29.99,
         "image": "img/ordenador-personal.png"
     },
@@ -24,7 +27,8 @@
         "id": 4,
         "name": "Producto 4",
         "description": "Descripción del producto 4",
+        "offer": 0,
         "price": 24.99,
-        "image": "img/URVAR-L.png"
+        "image": "img/offer.webp"
     }
 ]
