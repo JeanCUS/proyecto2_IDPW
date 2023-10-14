@@ -1,0 +1,72 @@
+/* Estilos para la página de carrito de compras */
+
+.container-cart {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la lista de elementos del carrito */
+.container--list-cart {
+    max-width: 600px; /* Ajusta el ancho máximo de la lista del carrito */
+    margin: 0 auto;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+.cart-item .product-name {
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+.cart-item .delete-button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Estilos para el total a pagar y botón de compra */
+.total, .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total p {
+    font-weight: bold;
+}
+
+#total-amount {
+    font-weight: bold;
+}
+
+#buy-button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}

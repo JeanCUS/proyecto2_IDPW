@@ -1,7 +1,7 @@
 /* Estilos para el carrusel */
 .carousel-container {
     position: relative;
-    max-width: 70%; /* Ancho del carrusel */
+    width: 70%; /* Ancho del carrusel */
     margin: 2em auto;
     overflow: hidden;
     display: flex;
@@ -11,28 +11,54 @@
 
 .carousel {
     display: flex;
-    gap: 3em; /* Espacio entre objetos */
-    transition: transform 0.5s ease; /* Transición suave para el carrusel */
+    gap: 1em; /* Espacio entre objetos, ajusta según tus preferencias */
+    transition: transform 0.2s ease; /* Transición suave para el carrusel */
     will-change: transform;
-    width: 80%; /* Para que el carrusel ocupe todo el espacio */
+    width: 80%; /* Para que el carrusel ocupe todo el ancho del contenedor */
     overflow: hidden;
     align-items: center;
     justify-content: center;
 }
 
 .carousel img {
-    max-width: 20em;
-    max-height: 20em;
-    /* object-fit: contain; */
+    max-width: 100%; /* Hace que las imágenes sean responsivas */
+    max-height: auto;
     cursor: pointer;
-    transition: transform 0.2s ease;
-}
-.carousel img:hover{
-    transform: scale(1.05);
 }
 
-.carousel img:active {
+.product-container:hover {
+    transform: scale(1.025);
+}
+
+.product-container:active {
     transform: scale(0.9); /* Efecto de escala para la imagen activa */
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar verticalmente */
+    text-align: center; /* Alinear el texto al centro */
+    transition: transform 0.2s ease;
+}
+
+.product-container a {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar verticalmente */
+    text-align: center; /* Alinear el texto al centro */
+    text-decoration: none;
+    color: #000; /* Cambia el color del texto, si es necesario */
+}
+
+/* Estilos para el nombre del producto */
+.product-container h3 {
+    margin-top: 1em; /* Espacio superior entre la imagen y el nombre */
+}
+
+/* Estilos para la descripción y precio del producto */
+.product-container p {
+    margin: 0.5em 0; /* Espacio entre los elementos de información del producto */
 }
 
 /* Estilos para los botones de navegación */
@@ -46,9 +72,11 @@
     z-index: 1;
     transition: background-color 0.3s ease; /* Transición suave para los botones */
 }
+
 .prev-button {
     left: 0;
 }
+
 .next-button {
     right: 0;
 }
@@ -56,4 +84,58 @@
 /* Cambio de color al pasar el mouse por encima de los botones */
 .prev-button:hover, .next-button:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Media queries para hacer los elementos más responsivos en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 90%; /* Ancho del carrusel en pantallas más pequeñas */
+    }
+    
+    .carousel {
+        gap: 0.5em; /* Espacio entre objetos en pantallas más pequeñas */
+    }
+    
+    .carousel img {
+        max-width: 90%; /* Máximo ancho de las imágenes en pantallas más pequeñas */
+    }
+}
+
+
+/* Estilos para el contenedor de las tarjetas */
+.product-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+/* Estilos para las tarjetas de productos */
+.product-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+.product-card:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #777;
 }

@@ -2,30 +2,24 @@
 
 // Función para cargar y mostrar los detalles de un producto
 function loadProductDetails(productId) {
+    const productDetailsContainer = document.getElementById('product-details');
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'backend/request.php'); // Ajusta la URL de la solicitud a tu backend PHP
+    xhr.open('GET', 'backend/request.php'); // No es necesario incluir el ID en la URL aquí
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            const response = JSON.parse(xhr.responseText);
-
-            // Encuentra el producto correspondiente por ID
-            const product = response.find(product => product.id === productId);
-
+            const products = JSON.parse(xhr.responseText);
+            const product = products.find(p => p.id === productId);
             if (product) {
-                // Rellena los detalles del producto en la página de detalles
-                const productDetailsContainer = document.getElementById('product-details');
-                if (productDetailsContainer) {
-                    productDetailsContainer.innerHTML = `
-                        <h2>${product.name}</h2>
-                        <img src="${product.image}" alt="${product.name}">
-                        <p>Descripción: ${product.description}</p>
-                        <p>Precio: $${product.price}</p>
-                        <button>Añadir al Carrito</button>
-                    `;
-                }
+                // Rellena los detalles del producto en el contenedor
+                productDetailsContainer.innerHTML = `
+                    <h2>${product.name}</h2>
+                    <img src="${product.image}" alt="${product.name}">
+                    <p>Descripción: ${product.description}</p>
+                    <p>Precio: $${product.price}</p>
+                    <button class="add-to-cart" data-product-id=${productId} onclick="addToCart(${productId})">Añadir al Carrito</button>
+                `;
             } else {
-                // Producto no encontrado
-                console.error('Producto no encontrado');
+                productDetailsContainer.innerHTML = '<p>Producto no encontrado</p>';
             }
         }
     };
