@@ -1,0 +1,31 @@
+<?php
+// Verifica que se haya recibido una solicitud POST con datos JSON.
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Lee el JSON del cuerpo de la solicitud.
+    $json = file_get_contents('php://input');
+    $data = json_decode($json, true);
+
+    if ($data) {
+        // Ruta al archivo cart.json
+        $cartFilePath = 'cart.json'; // Asegúrate de especificar la ruta correcta.
+
+        // Intenta escribir los datos en el archivo cart.json.
+        if (file_put_contents($cartFilePath, json_encode($data)) !== false) {
+            // Éxito: datos escritos en el archivo.
+            echo 'Carrito actualizado en el servidor';
+        } else {
+            // Error al escribir en el archivo.
+            http_response_code(500); // Error interno del servidor.
+            echo 'Error al escribir en el archivo';
+        }
+    } else {
+        // Error en los datos recibidos.
+        http_response_code(400); // Solicitud incorrecta.
+        echo 'Error en los datos recibidos';
+    }
+} else {
+    // Método no permitido.
+    http_response_code(405); // Método no permitido.
+    echo 'Método no permitido';
+}
+?>

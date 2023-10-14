@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/cart.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="img/ordenador-personal.png" alt="Logo de Mi Sitio" />
+        <p class="urvar">URVAR TECH</p>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="shopping-cart.html">Carrito</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="body">
+      <div class="container-cart">
+        <h1>Carrito de Compras</h1>
+        <div class="container-list-cart">
+          <ul class="cart-items">
+            <!-- Cada elemento del carrito se agrega aquí dinámicamente -->
+          </ul>
+        </div>
+        <div class="total">
+          <p>Total a Pagar: <span id="total-amount">$0.00</span></p>
+        </div>
+        <div class="action-buttons">
+          <button id="buy-button">Comprar</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="copyright">
+        &copy; 2023 Tu Empresa. Todos los derechos reservados.
+      </div>
+      <div class="contacto">Contacto: info@tuempresa.com</div>
+    </footer>
+    <script src="cart.js"></script>
+    <script src="loadCart.js"></script>
+  </body>
+</html>
