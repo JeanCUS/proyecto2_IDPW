@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $json = file_get_contents('php://input');
     $data = json_decode($json, true);
 
-    if ($data) {
+    if ($data !== null) {
         // Ruta al archivo cart.json
         $cartFilePath = 'cart.json'; // Asegúrate de especificar la ruta correcta.
 
@@ -19,9 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo 'Error al escribir en el archivo';
         }
     } else {
-        // Error en los datos recibidos.
-        http_response_code(400); // Solicitud incorrecta.
-        echo 'Error en los datos recibidos';
+        // Si $data es nulo, esto podría indicar un carrito vacío.
+        // Puedes implementar la lógica para manejarlo, como vaciar el carrito en el servidor.
+        // Nota: En este ejemplo, no se borra el archivo JSON para manejar mejor el caso de carrito vacío.
+        echo 'Carrito vacío en el servidor';
     }
 } else {
     // Método no permitido.
