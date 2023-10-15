@@ -59,20 +59,27 @@ function createCartItemElement(product) {
 }
 
 function removeFromCart(productId) {
-  const index = cart.findIndex((product) => product.id === parseInt(productId));
-  if (index !== -1) {
-    if (cart[index].quantity > 1) {
-      cart[index].quantity--; // Decrementa la cantidad del producto
-    } else {
-      cart.splice(index, 1); // Elimina el producto del carrito si la cantidad es 1
+    const index = cart.findIndex((product) => product.id === parseInt(productId));
+    if (index !== -1) {
+        if (cart[index].quantity > 1) {
+            cart[index].quantity--; // Decrementa la cantidad del producto
+            if((cart.length==1)&&(cart[index].quantity <= 0)) {
+                console.log("No estabas loco")
+                cart=[];    
+            }
+        } else {
+            // Si la cantidad es 1, elimina el producto del carrito
+            cart.splice(index, 1);
+        }
+
+        // Actualiza el carrito en el servidor
+        updateCartOnServer(cart);
+
+        displayCartItems(); // Actualiza la visualización del carrito
     }
-
-    // Realiza una solicitud al servidor para actualizar el archivo JSON con el contenido del carrito.
-    updateCartOnServer(cart);
-
-    displayCartItems(); // Actualiza la visualización del carrito
-  }
 }
+
+
 
 function updateTotalAmount() {
   const total = cart.reduce(
