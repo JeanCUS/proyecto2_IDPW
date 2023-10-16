@@ -42,6 +42,7 @@ h2 {
   background-color: #d81b5d;
 }
 
+/* Estilos responsive */
 @media (max-width: 1050px) {
   .container,
   .container h2,
@@ -54,9 +55,7 @@ h2 {
   #product-details img {
     width: 30em;
   }
-  /* .container {
-        max-width: 90%;
-    } */
+
 }
 @media (max-width: 550px) {
   .container,
@@ -69,7 +68,7 @@ h2 {
   }
 }
 
-/* Estilos para pantallas muy pequeñas */
+
 @media screen and (max-width: 400px) {
   #product-details img {
     width: 15em;

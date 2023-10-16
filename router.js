@@ -10,7 +10,6 @@ function loadProductDetails(productId) {
       const products = JSON.parse(xhr.responseText);
       const product = products.find((p) => p.id === productId);
       if (product) {
-        // Rellena los detalles del producto en el contenedor
         productDetailsContainer.innerHTML = `
                     <h2>${product.name}</h2>
                     <img src="${product.image}" alt="${product.name}">

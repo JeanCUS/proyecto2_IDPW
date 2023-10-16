@@ -4,12 +4,11 @@ let currentIndex = 0;
 let imagesArray = []; // Array para almacenar los productos en descuento obtenidos de PHP
 
 function createProduct(productObj) {
-  // Crea una representación visual del producto con un enlace a la página de detalles
   const productContainer = document.createElement("div");
   productContainer.classList.add("product-container");
 
   const productLink = document.createElement("a");
-  productLink.href = `product-details.html?id=${productObj.id}`; // Aseg
+  productLink.href = `product-details.html?id=${productObj.id}`; 
 
   const productImage = document.createElement("img");
   productImage.src = productObj.image;
@@ -64,11 +63,9 @@ document.querySelector(".next-button").addEventListener("click", nextSlide);
 function loadProducts() {
   const productSection = document.querySelector(".product-section");
 
-  // Hacer una solicitud al backend para obtener la lista de productos
   fetch("backend/request.php")
     .then((response) => response.json())
     .then((products) => {
-      // Procesar los datos y crear tarjetas de producto
       products.forEach((product) => {
         const productCard = createProductCard(product);
         productSection.appendChild(productCard);
@@ -93,13 +90,6 @@ function createProductCard(product) {
 
   const productPrice = document.createElement("p");
 
-  // if (product.offer >0) {
-  //     const delElement = document.createElement("del");
-
-  //     delElement.textContent = "Precio original";
-  // }
-
-  // productPrice.textContent = `Precio: $${product.offer>0?  : "a"}`;
   let price = product.price;
   if (product.offer > 0) {
     const delElement = document.createElement("del");
@@ -109,24 +99,21 @@ function createProductCard(product) {
     price = product.price - product.price * product.offer;
   }
 
-  // Agrega el precio con descuento (sin tachar) al párrafo
   productPrice.innerHTML += ` ${product.offer>0? ' | $'+price.toFixed(2): '$'+price.toFixed(2)}
   `;
 
-  // Agrega los elementos al contenedor de la tarjeta
   productCard.appendChild(productImage);
   productCard.appendChild(productName);
   productCard.appendChild(productPrice);
 
-  // Agrega un evento de clic para redirigir a la página de detalles con el ID del producto
+  // evento de clic para redirigir a la página de detalles con el ID del producto
   productCard.addEventListener("click", () => {
-    // Redirige a la página de detalles con el ID del producto como parámetro
     window.location.href = `product-details.html?id=${product.id}`;
   });
 
   return productCard;
 }
-// Llama a la función para cargar productos cuando la página se carga
+// Evento para llamar la función para cargar productos cuando la página se carga
 window.addEventListener("load", loadProducts);
 
 // Función para cargar productos desde PHP de forma asincrónica

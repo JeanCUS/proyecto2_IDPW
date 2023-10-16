@@ -13,7 +13,6 @@ function loadProductsFromJson() {
     });
 }
 
-// Llama a la función para cargar los productos desde cart.json
 loadProductsFromJson();
 
 function displayCartItems() {
@@ -65,14 +64,14 @@ function removeFromCart(productId) {
         cart = [];
       }
     } else {
-      // Si la cantidad es 1, elimina el producto del carrito
+      
       cart.splice(index, 1);
     }
 
-    // Actualiza el carrito en el servidor
+    
     updateCartOnServer(cart);
 
-    displayCartItems(); // Actualiza la visualización del carrito
+    displayCartItems(); 
   }
 }
 var totalGlobal = 0;

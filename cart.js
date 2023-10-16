@@ -2,19 +2,18 @@ const cartItemsList = document.querySelector(".cart-items");
 const totalAmount = document.getElementById("total-amount");
 let cart = [];
 
-// En tu script.js, puedes agregar el siguiente código para cargar la lista de productos desde tu archivo JSON o mediante una solicitud a tu backend.
 
 let products = []; // Aquí almacenaremos la lista de productos.
 
-// Realiza una solicitud para obtener la lista de productos desde tu JSON o backend.
+// solicitud para obtener la lista de productos desde JSON.
 function fetchProducts() {
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", "backend/request.php"); // Asegúrate de que la URL sea la correcta.
+  xhr.open("GET", "backend/request.php");
 
   xhr.onload = function () {
     if (xhr.status === 200) {
       products = JSON.parse(xhr.responseText);
-      // Puedes realizar otras operaciones una vez que tengas la lista de productos.
+     
     } else {
       console.error("Error al cargar la lista de productos.");
     }
@@ -23,7 +22,7 @@ function fetchProducts() {
   xhr.send();
 }
 
-// Llama a la función para cargar la lista de productos.
+// cargar la lista de productos.
 fetchProducts();
 function addToCart(productId) {
   var resultado = window.confirm("¿seguro que quiere agregar el producto al carrito?");
@@ -38,7 +37,6 @@ function addToCart(productId) {
         cart.push({ ...product, quantity: 1 });
       }
 
-      // En lugar de guardar en local storage, realiza una solicitud al servidor para actualizar el archivo JSON.
       updateCartOnServer(cart);
       window.alert('Se agregó al carrito :)')
     } else {
@@ -56,7 +54,7 @@ loadCartFromJSON();
 // Cargar datos del archivo JSON al array "cart"
 function loadCartFromJSON() {
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", "backend/cart.json"); // Asegúrate de que la URL sea la correcta.
+  xhr.open("GET", "backend/cart.json");
 
   xhr.onload = function () {
     if (xhr.status === 200) {
@@ -71,7 +69,7 @@ function loadCartFromJSON() {
 
 function updateCartOnServer(cartData) {
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", "backend/update-cart.php"); // Asegúrate de que la URL sea la correcta y de que el servidor tenga un script para manejar esta solicitud.
+  xhr.open("POST", "backend/update-cart.php"); 
 
   xhr.setRequestHeader("Content-Type", "application/json");
 

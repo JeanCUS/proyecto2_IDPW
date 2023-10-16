@@ -19,9 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo 'Error al escribir en el archivo';
         }
     } else {
-        // Si $data es nulo, esto podría indicar un carrito vacío.
-        // Puedes implementar la lógica para manejarlo, como vaciar el carrito en el servidor.
-        // Nota: En este ejemplo, no se borra el archivo JSON para manejar mejor el caso de carrito vacío.
         echo 'Carrito vacío en el servidor';
     }
 } else {

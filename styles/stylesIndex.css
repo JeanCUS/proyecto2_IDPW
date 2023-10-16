@@ -36,7 +36,7 @@
 }
 
 .product-container:active {
-  transform: scale(0.9); /* Efecto de escala para la imagen activa */
+  transform: scale(0.9); 
 }
 
 .product-container {
@@ -44,28 +44,28 @@
   height: fit-content;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrar verticalmente */
-  text-align: center; /* Alinear el texto al centro */
+  align-items: center;
+  text-align: center;
   transition: transform 0.2s ease;
 }
 
 .product-container a {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrar verticalmente */
-  text-align: center; /* Alinear el texto al centro */
+  align-items: center;
+  text-align: center;
   text-decoration: none;
-  color: #000; /* Cambia el color del texto, si es necesario */
+  color: #000;
 }
 
-/* Estilos para el nombre del producto */
+
 .product-container h3 {
-  margin-top: 1em; /* Espacio superior entre la imagen y el nombre */
+  margin-top: 1em;
 }
 
 /* Estilos para la descripción y precio del producto */
 .product-container p {
-  margin: 0.5em 0; /* Espacio entre los elementos de información del producto */
+  margin: 0.5em 0;
 }
 
 /* Estilos para los botones de navegación */
