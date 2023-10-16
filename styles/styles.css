@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos para el encabezado */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5em;
+}
+
+/* Estilos para el logotipo */
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+}
+.logo .urvar {
+  padding: 0em 0.5em;
+  font-size: large;
+}
+
+.logo img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+/* Estilos para el menú */
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  margin-right: 10px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 1.5em;
+}
+
+.menu a:hover {
+  background-color: black;
+  transition: 0.4s ease;
+}
+
+.body {
+  min-height: 90vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  bottom: 0;
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Estilos para el texto de copyright */
+.copyright {
+  font-size: 14px;
+}
+
+/* Estilos para los detalles de contacto */
+.contacto {
+  font-size: 12px;
+}
+.contacto a{
+  text-decoration: none;
+  color: #9b9b9b;
+}
+.contacto a:hover{
+  text-decoration: underline;
+}
+
+@media (max-width: 400px) {
+  .menu a {
+    padding: 0.5em;
+  }
+  header, .logo p {
+    font-size:small
+  }
+}

@@ -1,30 +1,90 @@
 [
     {
         "id": 1,
-        "name": "Producto 1",
-        "description": "Descripción del producto 1",
-        "price": 19.99,
-        "image": "img/ordenador-personal.png"
+        "name": "TECLADO REDRAGON KUMARA NEGRO MECANICO",
+        "description": "TECLADO REDRAGON GAMING KUMARA USBNEGRO RAINBOW TKL SWITCH ROJO K552MECANICO",
+        "offer": 0.10,
+        "price": 48.99,
+        "image": "img/red-kumara.jpeg"
     },
     {
         "id": 2,
-        "name": "Producto 2",
-        "description": "Descripción del producto 2",
-        "price": 24.99,
-        "image": "img/URVAR-L.png"
+        "name": "TECLADO REDRAGON DRACONIC MECANICO BLANCO",
+        "description": "TECLADO REDRAGON GAMING DRACONICINALAMBRICO BLANCO RGB 60% K530MECANICO",
+        "offer": 0.10,
+        "price": 55.99,
+        "image": "img/red-draconic.jpeg"
     },
     {
         "id": 3,
-        "name": "Producto 3",
-        "description": "Descripción del producto 3",
-        "price": 29.99,
-        "image": "img/ordenador-personal.png"
+        "name": "TECLADO LOGITECH G213 (GAMING, LED, USB)",
+        "description": "LOGITECH G213 TECLADO GAMING RGBCON CONTROLES PARA MEDIOS, 16.8MILLONES COLORES, TECLASRETROILUMINADAS, RESISTENTE ASALPICADURASDISENADO PARA TODO TIPO DE GAMERCON CUALQUIER NIVEL DE HABILIDADILUMINACION RGB PERSONALIZABLE DEHASTA 16.8 MILLONES DE COLORES",
+        "offer": 0.10,
+        "price": 52.99,
+        "image": "img/log-g213.jpeg"
     },
     {
         "id": 4,
-        "name": "Producto 4",
-        "description": "Descripción del producto 4",
+        "name": "MOUSE LOGITECH G203 LIGHTSYNC 910-005791 (USB)",
+        "description": "MOUSE LOGITECH G203 LYGHTSYNC-OPTICO-6 BOTONES-ALAMBRICO-USB",
+        "offer": 0.15,
+        "price": 44.99,
+        "image": "img/log-g203.jpeg"
+    },
+    {
+        "id": 6,
+        "name": "MOUSE LOGITECH G600 MMO GAMING (CON 20 BOTONES)",
+        "description": "MOUSE LOGITECH G600 MMO GAMING- 20 BOTONES OPTIMIZADOS PARA MMO- PANEL PARA EL PULGAR CON 2 SECCIONES- BOTON G-ALT PARA DUPLICAR FUNCIONES- COLOR DE RETROILUMINACION PERSONALIZABLE- PERFIL DE MEMORIA INTEGRADA- CAMBIO DE DPI SOBRE LA MARCHA",
+        "offer": 0,
+        "price": 30.99,
+        "image": "img/log-g600.jpeg"
+    },
+    {
+        "id": 7,
+        "name": "MOUSE LOGITECH G502 GAMING (OPTICO, ILUMINAD0)",
+        "description": "MOUSE LOGITECH G502 GAMING-SENSOR OPTICO HERO-5 PESAS DE 3.6 GRAMOS-ILUMINACION RGB PROGRAMABLE-11 BOTONES PROGRAMABLES PARA MACROS",
+        "offer": 0,
+        "price": 55.99,
+        "image": "img/log-g502.jpeg"
+    },
+    {
+        "id": 8,
+        "name": "MOUSE REDRAGON GRIFFIN 7200 NEGRO",
+        "description": "MOUSE REDRAGON GAMING GRIFFIN USBNEGRO RGB M607 DPI 800-7200",
+        "offer": 0,
+        "price": 18,
+        "image": "img/red-grifin.jpeg"
+    },
+    {
+        "id": 9,
+        "name": "LOGITECH G733 LIGHTSPEED - NEGRO",
+        "description": "Libertad total con alcance inalámbrico de hasta 65.6 ft y transmisión de audio inalámbrica LIGHTSPEED. Sigue jugando hasta 29 horas de duración de la batería. Reproduce en estéreo en PlayStation(R) 4. Personalice la iluminación de sus auriculares en todo el espectro de colores ~16.8M. Juega en colores con la iluminación frontal de doble zona LIGHTSYNC RGB y elige entre las animaciones predefinidas o crea tu propia con el software G HUB.",
+        "offer": 0,
+        "price": 180.99,
+        "image": "img/log-g733.jpg"
+    },
+    {
+        "id": 10,
+        "name": "LOGITECH G935 - WIRELESS",
+        "description": "Sonido Envolvente 7.1 DTS HEADPHONE:X 2.0 -Trasductores de baja distorsión Pro-G de 50 mm -Micrófono de 6 mm df varilla mejorado para comunicaciones increíblemente claras y precisas -Logitech Lightsync RGB -Compatible con PC, PS4, Xbox One, Nintendo Switch y Móviles",
+        "offer": 0,
+        "price": 150,
+        "image": "img/log-g935.jpg"
+    },
+    {
+        "id": 11,
+        "name": "LOGITECH G PRO X LEAGUE OF LEGENDS",
+        "description": "Los audífonos de Logitech G PRO X para Gaming están diseñados para inspirar a los jugadores de League of Legends. -Escucha y suena como un profesional. Diseñados con un micrófono extraíble y con el software Blue VO!CE para un sonido vocal profesional. -Con un sonido envolvente 7.1 y transductores PRO G de 50 mm para una imagen sonora sorprendentemente clara. -Dotados de suaves almohadillas de espuma viscoelástica cubiertas de piel sintética o de tela que proveen comodidad todo el día. -La tarjeta de sonido externa USB te da un sonido y un chat claros.",
+        "offer": 0,
         "price": 24.99,
-        "image": "img/URVAR-L.png"
+        "image": "img/log-g-lol.jpg"
+    },
+    {
+        "id": 12,
+        "name": "ASTRO A10 GEN 2 GRIS",
+        "description": "Calidad de sonido mejorada: Los Auriculares ASTRO Gaming A10 Gen 2 para PC poseen transductores de 32 mm optimizados para que oigas tu juego y a tus compañeros con claridad y precisión. -Micrófono giratorio: Con un micrófono unidireccional giratorio integrado para silenciar y obtener privacidad. -Control de volumen en el cable: te permite ajustar el audio sin tener que pausar el juego. -Hecho para durar: Una diadema de acero duradera y una construcción resistente. -Las almohadillas de los auriculares y de la diadema son reemplazables.",
+        "offer": 0,
+        "price": 72.99,
+        "image": "img/astro-a10.jpg"
     }
 ]

@@ -1,147 +1,198 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilos para el encabezado */
-header {
-    background-color: #333; /* Cambia este color según tus preferencias */
-    color: #fff; /* Color del texto */
-    padding: 10px 0; /* Espaciado interior del encabezado */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 10em;
-}
-
-/* Estilos para el logotipo */
-
-.logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5em;
-}
-.logo .urvar{
-    padding: 0em 0.5em;
-    font-size: large;
-}
-
-.logo img {
-    max-width: 50px;
-    max-height: 50px; /* Ajusta el tamaño máximo de tu logotipo */
-}
-
-
-/* Estilos para el menú */
-.menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.menu li {
-    margin-right: 20px; /* Espacio entre elementos del menú */
-}
-
-.menu a {
-    color: #fff; /* Color del texto del menú */
-    text-decoration: none; /* Quita el subrayado de los enlaces */
-}
-
-.menu a:hover {
-    text-decoration: underline; /* Subrayado al pasar el cursor sobre los enlaces */
-}
-
-.body{
-    min-height: 90vh;
-}
-
-
 /* Estilos para el carrusel */
 .carousel-container {
-    position: relative;
-    max-width: 70%; /* Ancho del carrusel */
-    margin: 2em auto;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  max-width: 80%;
+  margin: 2em auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: all transform 2s ease;
+  padding-bottom: 2em;
+  box-shadow: 0 5px 3px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .carousel {
-    display: flex;
-    gap: 3em; /* Espacio entre objetos */
-    transition: transform 0.5s ease; /* Transición suave para el carrusel */
-    will-change: transform;
-    width: 80%; /* Para que el carrusel ocupe todo el espacio */
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  gap: 1em;
+  transition: transform 0.2s ease;
+  will-change: transform;
+  width: 80%;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel img {
-    max-width: 20em;
-    max-height: 20em;
-    /* object-fit: contain; */
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-.carousel img:hover{
-    transform: scale(1.05);
+  max-width: 90%;
+  max-height: auto;
+  cursor: pointer;
 }
 
-.carousel img:active {
-    transform: scale(0.9); /* Efecto de escala para la imagen activa */
+.product-container:hover {
+  transform: scale(1.025);
+}
+
+.product-container:active {
+  transform: scale(0.9); 
+}
+
+.product-container {
+  width: 33%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.product-container a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+}
+
+
+.product-container h3 {
+  margin-top: 1em;
+}
+
+/* Estilos para la descripción y precio del producto */
+.product-container p {
+  margin: 0.5em 0;
 }
 
 /* Estilos para los botones de navegación */
-.prev-button, .next-button {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 10em 20px;
-    border: none;
-    cursor: pointer;
-    z-index: 1;
-    transition: background-color 0.3s ease; /* Transición suave para los botones */
+.carousel-button {
+  position: absolute;
+  background-color: rgba(68, 68, 68, 0.5);
+  color: #fff;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
+
 .prev-button {
-    left: 0;
+  left: 0;
 }
+
 .next-button {
-    right: 0;
+  right: 0;
 }
 
-/* Cambio de color al pasar el mouse por encima de los botones */
-.prev-button:hover, .next-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 
-
-
-footer {
-    background-color: #333; /* Cambia este color según tus preferencias */
-    color: #fff; /* Color del texto */
-    padding: 10px 0; /* Espaciado interior del footer */
-    text-align: center;
-    bottom: 0;
-    height: 10em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+/* Estilos para el contenedor de las tarjetas */
+.product-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  align-content: center;
+  justify-content: center;
 }
 
-/* Estilos para el texto de copyright */
-.copyright {
-    font-size: 14px; /* Tamaño de fuente para el copyright */
+/* Estilos para las tarjetas de productos */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+  justify-self: center;
+
+}
+.product-card:hover {
+  transform: scale(1.03);
+  cursor: pointer;
 }
 
-/* Estilos para los detalles de contacto */
-.contacto {
-    font-size: 12px; /* Tamaño de fuente para los detalles de contacto */
+.product-card img {
+  max-width: 100%;
+  height: auto;
 }
+
+.product-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #777;
+  margin-top: auto;
+}
+
+/* Media queries para hacer los elementos más responsivos en pantallas más pequeñas */
+
+@media (max-width: 1000px) {
+    .carousel {
+      gap: 3em;
+    }
+    .product-container:last-child {
+      display: none;
+    }
+    .product-container {
+      width: 30em;
+    }
+  }
+  @media (max-width: 750px) {
+    .carousel-container {
+      min-width: 95vw;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  
+    .carousel {
+      font-size: small;
+      gap: 2em;
+    }
+  
+    .carousel img {
+      max-width: 100%;
+    }
+    .product-card h3{
+        font-size: small;
+    }
+  }
+  
+  @media (max-width: 560px) { 
+    .product-card{
+        max-width: 80%;
+        justify-self: center;
+    }
+  }
+  @media (max-width: 450px) {
+    .product-container {
+      width: 18em;
+    }
+  
+    .product-container:first-child {
+      display: none;
+    }
+    .product-container:last-child {
+      display: none;
+    }
+    .product-card{
+        max-width: 95%;
+    }
+  }
+  

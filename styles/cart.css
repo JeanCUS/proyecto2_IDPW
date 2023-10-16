@@ -1,0 +1,102 @@
+/* Estilos para la página de carrito de compras */
+
+.container-cart {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para la lista de elementos del carrito */
+.container-list-cart {
+  max-width: 50em;
+  width: 50em;
+  margin: 0 auto;
+}
+
+h1 {
+  padding-bottom: 2rem;
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e2e1e1;
+}
+
+.cart-item img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+.cart-item-name {
+  padding-right: 1em;
+}
+
+.remove-button {
+  margin-left: auto;
+  background-color: #ff6347;
+  height: fit-content;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+.cart-item .remove-button:hover {
+  background-color: #cf432a;
+  transition: 0.3 ease;
+}
+
+.cart-item-price{
+  color: #777;
+
+}
+/* Estilos para el total a pagar y botón de compra */
+.total,
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.total p {
+  font-weight: bold;
+}
+
+#total-amount {
+  font-weight: normal;
+}
+
+#paypal-button-container{
+  margin-top: 2em;
+}
+
+@media (max-width: 1000px) {
+  .container-list-cart {
+    width: 90%;
+  }
+}
+@media (max-width: 600px) {
+  .container-cart {
+    font-size: small;
+  }
+}
+
+@media (max-width: 380px) {
+  .container-cart {
+    width: 30em;
+    font-size: x-small;
+  }
+}

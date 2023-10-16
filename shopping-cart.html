@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Technological UrVar</title>
+    <title>Carrito de Compras</title>
     <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" href="styles/stylesIndex.css" />
+    <link rel="stylesheet" href="styles/cart.css" />
+    <script src="https://www.paypal.com/sdk/js?client-id=ATBa1RrD7WRUt13KbGzGnjguADmqNAJxr3WcLb6oyKwkfAPw2XsFZhQzSSrOf9t95E8p8Yr2bp6_pbC0"></script>
   </head>
   <body>
     <header>
-      <div class="logo" href="">
+      <div class="logo">
         <img src="img/ordenador-personal.png" alt="Logo de Mi Sitio" />
         <p class="urvar">UrVar tech</p>
       </div>
@@ -21,22 +22,29 @@
       </nav>
     </header>
     <div class="body">
-      <section class="carousel-container">
-        <div class="carousel">
-          <!-- Imágenes se cargarán aquí dinámicamente -->
+      <div class="container-cart">
+        <h1>Carrito de Compras</h1>
+        <div class="container-list-cart">
+          <ul class="cart-items">
+            <!-- Cada elemento del carrito se agrega aquí dinámicamente -->
+          </ul>
         </div>
-        <button class="carousel-button prev-button"><<</button>
-        <button class="carousel-button next-button">>></button>
-      </section>
-      <section class="product-section"></section>
+        <div class="total">
+          <p>Total a Pagar: <span id="total-amount">$0.00</span></p>
+        </div>
+        <div class="action-buttons">
+          <div id="paypal-button-container"></div>
+        </div>
+      </div>
     </div>
+
     <footer>
       <div class="copyright">
         &copy; UrVar tech 2023. Todos los derechos reservados.
       </div>
       <div class="contacto">Contactos: <a href="mailto:ianvargasledezma@gmail.com">ianvargasledezma@gmail.com</a> | <a href="mailto:urbinasilvajeancarlos@gmail.com">urbinasilvajeancarlos@gmail.com</a></div>
     </footer>
-    <script src="script.js"></script>
-    <script src="router.js"></script>
+    <script src="cart.js"></script>
+    <script src="loadCart.js"></script>
   </body>
 </html>

@@ -1,8 +1,9 @@
 class product {
-    constructor(id, name, description, price, image){
+    constructor(id, name, description, offer, price, image){
         this.id = id;
         this.name=name;
         this.description = description;
+        this.offer = offer;
         this.price = price;
         this.image = image;
     }
@@ -15,6 +16,9 @@ class product {
     
     get description(){return this.description;}
     set description(description){this.description=description}
+
+    get offer(){return this.offer}
+    set offer(offer){this.offer=offer}
     
     get price(){return this.price}
     set price(price){this.price=price}
