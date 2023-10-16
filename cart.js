@@ -26,21 +26,29 @@ function fetchProducts() {
 // Llama a la función para cargar la lista de productos.
 fetchProducts();
 function addToCart(productId) {
-  const product = products.find((item) => item.id === productId);
-  if (product) {
-    const existingProduct = cart.find((item) => item.id === product.id);
+  var resultado = window.confirm("¿seguro que quiere agregar el producto al carrito?");
+  if (resultado) {
+    const product = products.find((item) => item.id === productId);
+    if (product) {
+      const existingProduct = cart.find((item) => item.id === product.id);
 
-    if (existingProduct) {
-      existingProduct.quantity++;
+      if (existingProduct) {
+        existingProduct.quantity++;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+
+      // En lugar de guardar en local storage, realiza una solicitud al servidor para actualizar el archivo JSON.
+      updateCartOnServer(cart);
+      window.alert('Se agregó al carrito :)')
     } else {
-      cart.push({ ...product, quantity: 1 });
+      console.log("Producto no encontrado");
     }
-
-    // En lugar de guardar en local storage, realiza una solicitud al servidor para actualizar el archivo JSON.
-    updateCartOnServer(cart);
-  } else {
-    console.log("Producto no encontrado");
+  }else{
+    window.alert('No se agregó al carrito')
   }
+
+  
 }
 
 loadCartFromJSON();

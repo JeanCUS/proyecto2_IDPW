@@ -1,4 +1,3 @@
-// Suponiendo que esta es la ruta correcta de tu archivo cart.json
 const cartJsonURL = "backend/cart.json";
 
 // Función para cargar los productos desde cart.json
@@ -6,8 +5,6 @@ function loadProductsFromJson() {
   fetch(cartJsonURL)
     .then((response) => response.json())
     .then((data) => {
-      // Una vez que tengas los datos del archivo JSON, puedes procesarlos como necesites.
-      // En este ejemplo, simplemente los almacenamos en la variable cart.
       cart = data;
       displayCartItems();
     })
@@ -33,25 +30,25 @@ function displayCartItems() {
 
 function createCartItemElement(product) {
   const cartItem = document.createElement("li");
+  console.log("json: " + product);
   cartItem.innerHTML = `
           <div class="cart-item">
-              <img src="${product.image}" alt="${
+            <img src="${product.image}" alt="${
     product.name
   }" class="cart-item-image" />
-              <div class="cart-item-details">
-                  <p class="cart-item-name">${product.name}</p>
-                  <p class="cart-item-price">$${
-                    product.price
-                      ? product.price.toFixed(2)
-                      : "Precio no disponible"
-                  }</p>
-                  <p class="cart-item-quantity">Cantidad: ${
-                    product.quantity
-                  }</p>
-                  <button class="remove-button" data-product-id="${
-                    product.id
-                  }" onclick="removeFromCart('${product.id}')">Eliminar</button>
-              </div>
+            <div class="cart-item-details">
+              <p class="cart-item-name">${product.name}</p>
+              <p class="cart-item-quantity">Cantidad: ${product.quantity}</p>
+              <p class="cart-item-price"> <del>${
+                product.offer > 0 ? "$" + product.price : ""
+                }</del> ${product.offer
+                  ? ' | $'+(product.price - product.price * product.offer).toFixed(2)
+                  : '$'+product.price
+              }</p>
+            </div>
+            <button class="remove-button" data-product-id="${
+              product.id
+            }" onclick="removeFromCart('${product.id}')">Eliminar</button>
           </div>
       `;
 
@@ -59,41 +56,81 @@ function createCartItemElement(product) {
 }
 
 function removeFromCart(productId) {
-    const index = cart.findIndex((product) => product.id === parseInt(productId));
-    if (index !== -1) {
-        if (cart[index].quantity > 1) {
-            cart[index].quantity--; // Decrementa la cantidad del producto
-            if((cart.length==1)&&(cart[index].quantity <= 0)) {
-                console.log("No estabas loco")
-                cart=[];    
-            }
-        } else {
-            // Si la cantidad es 1, elimina el producto del carrito
-            cart.splice(index, 1);
-        }
-
-        // Actualiza el carrito en el servidor
-        updateCartOnServer(cart);
-
-        displayCartItems(); // Actualiza la visualización del carrito
+  const index = cart.findIndex((product) => product.id === parseInt(productId));
+  if (index !== -1) {
+    if (cart[index].quantity > 1) {
+      cart[index].quantity--;
+      if (cart.length == 1 && cart[index].quantity <= 0) {
+        console.log("No estabas loco");
+        cart = [];
+      }
+    } else {
+      // Si la cantidad es 1, elimina el producto del carrito
+      cart.splice(index, 1);
     }
+
+    // Actualiza el carrito en el servidor
+    updateCartOnServer(cart);
+
+    displayCartItems(); // Actualiza la visualización del carrito
+  }
 }
-
-
-
+var totalGlobal = 0;
 function updateTotalAmount() {
   const total = cart.reduce(
-    (acc, product) => acc + product.price * product.quantity,
+    (acc, product) => acc + (product.offer>0?(product.price - product.price * product.offer) : product.price ) * product.quantity,
     0
   );
   totalAmount.textContent = `$${total.toFixed(2)}`;
+  totalGlobal = total;
 }
 
 function buyCart() {
-  // Aquí puedes implementar la lógica para realizar la compra del carrito
-  // Por ejemplo, puedes enviar los detalles del carrito a un servidor
-  // para procesar la compra y vaciar el carrito después de la compra exitosa.
   alert("Compra realizada con éxito");
-  cart = [];
-  displayCartItems();
+  // cart = [];
+  // displayCartItems();
 }
+
+// cuenta
+// sb-4q1xy27779479@personal.example.com
+// =%MM4de7
+updateTotalAmount();
+paypal
+  .Buttons({
+    style: {
+      layout: "horizontal",
+      color: "blue",
+      shape: "pill",
+      label: "pay",
+    },
+
+    createOrder: function (data, actions) {
+      console.log("hola: " + totalGlobal);
+      return actions.order.create({
+        purchase_units: [
+          {
+            amount: {
+              value: parseFloat(totalGlobal.toFixed(2)),
+            },
+          },
+        ],
+      });
+    },
+
+    onApprove: function (data, actions) {
+      actions.order.capture().then(function (detalles) {
+        console.log("Detalles de la compra:", detalles);
+
+        alert("Pago realizado");
+        cart = [];
+        updateCartOnServer(cart);
+        displayCartItems();
+      });
+    },
+
+    onCancel: function (data) {
+      alert("Pago cancelado");
+      console.log(data);
+    },
+  })
+  .render("#paypal-button-container");

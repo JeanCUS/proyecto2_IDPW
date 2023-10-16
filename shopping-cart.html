@@ -6,12 +6,13 @@
     <title>Carrito de Compras</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/cart.css" />
+    <script src="https://www.paypal.com/sdk/js?client-id=ATBa1RrD7WRUt13KbGzGnjguADmqNAJxr3WcLb6oyKwkfAPw2XsFZhQzSSrOf9t95E8p8Yr2bp6_pbC0"></script>
   </head>
   <body>
     <header>
       <div class="logo">
         <img src="img/ordenador-personal.png" alt="Logo de Mi Sitio" />
-        <p class="urvar">URVAR TECH</p>
+        <p class="urvar">UrVar tech</p>
       </div>
       <nav class="menu">
         <ul>
@@ -32,7 +33,8 @@
           <p>Total a Pagar: <span id="total-amount">$0.00</span></p>
         </div>
         <div class="action-buttons">
-          <button id="buy-button">Comprar</button>
+          <div id="paypal-button-container"></div>
+          <!-- <button id="buy-button" onclick="buyCart()">Comprar</button> -->
         </div>
       </div>
     </div>
