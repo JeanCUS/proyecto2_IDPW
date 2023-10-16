@@ -124,6 +124,8 @@ paypal
         cart = [];
         updateCartOnServer(cart);
         displayCartItems();
+        window.location.href = `index.html`;
+
       });
     },
 
